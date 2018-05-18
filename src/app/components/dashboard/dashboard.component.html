@@ -1,0 +1,57 @@
+
+  <nav class="navbar navbar-expand-sm navbar-dark  mb-4 myDash">
+    <a class="" routerLink="">
+      <img src="assets/logo.png" alt="" class="img-fluid" (click)="changeSearchProperty()">
+    </a>
+    <div class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarCollapse" aria-controls="navbarCollapse"
+            aria-expanded="false" aria-label="Toggle navigation" (click)="toggleButton()">
+      <!--<span class="navbar-toggler-icon myIcon"></span>-->
+      <div class="loader"  *ngIf="btnClick" data-toggle="collapse" data-target="#navbarCollapse"></div>
+      <div class="loader1" *ngIf="!btnClick" data-toggle="collapse" data-target="#navbarCollapse"></div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+
+
+        <div class="nav-item">
+          <li class="nav-item dropdown">
+            <a class="navbar-brand dropdown-toggle elements" href="#"
+               id="dropdown03" data-toggle="dropdown" aria-haspopup="true"
+               aria-expanded="false">Rent</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown03">
+              <a class="dropdown-item" href="#">Rent</a>
+              <hr>
+              <a class="dropdown-item" href="#">Buy</a>
+              <hr>
+              <a class="dropdown-item" href="#">Pg/Hostel</a>
+              <hr>
+              <a class="dropdown-item" href="#">Flatmates</a>
+            </div>
+          </li>
+        </div>
+
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="#" class="navbar-brand elements">Post Your Property</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="navbar-brand elements">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="navbar-brand elements">Login</a>
+        </li>
+
+
+
+
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+  <app-search [showSearchComponent]="showSearchFromDash"
+  (informDash)="getInfoFromSearch($event)" [hideSearchBtn]="makeBtnHidden"
+              (informDashAboutBtn)="methodToToggleBtnHidden($event)"></app-search>
+</div>
+
